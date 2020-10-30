@@ -1,19 +1,16 @@
 <template>
   <div class="nodepanel">
     <h1>{{ msg }}</h1>
-    <IO_node mindex="1" >
-    </IO_node>
-    <IO_node mindex="2" >
-    </IO_node>
-    <IO_node mindex="3" >
-    </IO_node>
-    <IO_node mindex="4" >
+    <IO_node v-for="(data, index) in initConf.cv" 
+            v-bind:key="data.text" 
+            :mindex="index">
     </IO_node>
   </div>
 </template>
 <script>
 
 import IO_node from './IO_node.vue'
+import cv_config from "../cv_config.json"
 
 export default {
   name: 'NodePanel',
@@ -22,13 +19,12 @@ export default {
   },
   data(){
     return{
-      
+      initConf: cv_config,
     }
   },
   components:{
     IO_node
   },
-
 }
 </script>
 

@@ -16,7 +16,6 @@
 </div>
 </template>
 <script>
-
 import vueDropdown from "../../node_modules/vue-dynamic-dropdown/dropdown";
 import cv_config from "../cv_config.json"
 
@@ -28,7 +27,7 @@ components: {
 props:['mindex'],
 data: function() {
   return {
-    cvConfigData : cv_config,
+    cvConfigData : cv_config, // READ FROM JSON FILE
     config_mode: {
       options: [
         {
@@ -38,7 +37,7 @@ data: function() {
           value: "CV In"
         },
         {
-          value: "Digital Im"
+          value: "Digital In"
         }
       ],
       
@@ -71,7 +70,7 @@ data: function() {
     },	
     config_name: {
       options: ["Add yours"],
-      placeholder: cv_config['cv'][this.mindex-1]['name'],
+      placeholder: cv_config['cv'][this.mindex]['name'],
       backgroundColor: "#cde4f5",
       textColor: "black",
       borderRadius: "1.5em",
@@ -81,49 +80,61 @@ data: function() {
   };
 },
 created:function() {
-
-  var initMode = (this.cvConfigData['cv'][this.mindex-1]['mode'])   
-  var initRange =(this.cvConfigData['cv'][this.mindex-1]['range'])     
+  // SET INIT STATE OF EACH NODE WITH RESPECTIVE DATA FROM THE JSON
+  var initMode = (this.cvConfigData['cv'][this.mindex]['mode'])   
+  var initRange =(this.cvConfigData['cv'][this.mindex]['range'])     
 
   console.log(initMode + " MODE")
 
+  // DISPLAY LOADED DATA TO LABEL
   this.config_mode.placeholder = this.config_mode.options[initMode].value
   this.config_range.placeholder = this.config_range.options[initRange].value
 },
 
 methods: {
+
   setNewSelectedOption(selectedOption,property) {
+
     property.placeholder = selectedOption.value
+    
     // TO DO send to JSON property with IO index and props 
+    // User changes range or mode 
     if(property == this.config_range){
       console.log("INDEX "+ this.mindex + " Range : "+ selectedOption.value)
     }
     if(property == this.config_mode){
       console.log("INDEX "+ this.mindex + "Mode : "+ selectedOption.value)
     }
-
   }
 },
 };
 </script>
 <style>
 #io_node {
+  border-style: none;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: left;
   color: #2c3e50;
   margin-top: 0.5rem;
+  margin-left: 1.2rem;
 }
 
 .standbyme {
   text-align: left;
   display: inline-block;
+  margin-left: 3rem;
+  padding: 0;
 }
-p{
-  margin: 0;
-  padding: 0%;
+p {
+  font-style: italic;
+  text-align: center;
+  margin-left: 0.1rem;
+  padding: 2%;
   display: inline;
-  margin-right: 0.4rem;
+  margin-right: 0;
+  font-size: 0.8rem;
+  font-weight: 900;
 }
 </style>
