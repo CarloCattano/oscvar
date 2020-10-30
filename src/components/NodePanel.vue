@@ -8,9 +8,10 @@
   </div>
 </template>
 <script>
-
 import IO_node from './IO_node.vue'
 import cv_config from "../cv_config.json"
+import axios from 'axios'
+const baseURL = "http://localhost:3000/cv"
 
 export default {
   name: 'NodePanel',
@@ -20,15 +21,40 @@ export default {
   data(){
     return{
       initConf: cv_config,
+      jsonObject: null,
+     
+      configData:[]
     }
   },
   components:{
     IO_node
   },
+  methods: { //TEst axios post failing
+    async addTodo() {
+      axios.post('/cv', {
+                0: 'Fred',
+                1: 'Flintstone'
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+    }
+  },
+  async created(){
+    try {
+      const res = await axios.get(baseURL)
+      this.configData = res.data
+      console.log("LOADED DATA FROM SERVER")
+     // this.addTodo()   // POST REQUEST TO ADD/MOD DATA ?? 
+    } catch(e) {
+      console.error(e)
+      }
+  }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 * {
   margin: 0;

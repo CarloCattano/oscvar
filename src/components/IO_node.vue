@@ -14,6 +14,7 @@
     </vue-dropdown>
   </div>
 </div>
+
 </template>
 <script>
 import vueDropdown from "../../node_modules/vue-dynamic-dropdown/dropdown";
@@ -84,8 +85,6 @@ created:function() {
   var initMode = (this.cvConfigData['cv'][this.mindex]['mode'])   
   var initRange =(this.cvConfigData['cv'][this.mindex]['range'])     
 
-  console.log(initMode + " MODE")
-
   // DISPLAY LOADED DATA TO LABEL
   this.config_mode.placeholder = this.config_mode.options[initMode].value
   this.config_range.placeholder = this.config_range.options[initRange].value
@@ -127,6 +126,7 @@ methods: {
   margin-left: 3rem;
   padding: 0;
 }
+
 p {
   font-style: italic;
   text-align: center;
