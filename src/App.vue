@@ -6,11 +6,12 @@
 </template>
 <script>
 import NodePanel from './components/NodePanel.vue'
+
 export default {
-name: 'App',
-components: {
-  NodePanel
-}
+  name: 'App',
+  components: {
+    NodePanel
+  }
 }
 </script>
 

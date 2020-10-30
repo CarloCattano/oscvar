@@ -105,27 +105,25 @@ methods: {
   }
 },
 };
-
 </script>
 <style>
 #io_node {
-
-font-family: "Avenir", Helvetica, Arial, sans-serif;
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
-text-align: left;
-color: #2c3e50;
-margin-top: 0.5rem;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: left;
+  color: #2c3e50;
+  margin-top: 0.5rem;
 }
 
 .standbyme {
-text-align: left;
-display: inline-block;
+  text-align: left;
+  display: inline-block;
 }
 p{
-margin: 0;
-padding: 0%;
-display: inline;
-margin-right: 0.4rem;
+  margin: 0;
+  padding: 0%;
+  display: inline;
+  margin-right: 0.4rem;
 }
 </style>
