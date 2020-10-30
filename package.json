@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "serve":"concurrently \"npx json-server  ./src/server/db.json\" \"vue-cli-service serve\"",
-
     "test": "(npx json-server  ./src/server/db.json && vue-cli-service serve)",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
