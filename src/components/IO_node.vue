@@ -32,13 +32,13 @@ export default {
 			config_mode: {
 				options: [
 					{
-						value: "Digital In"
+						value: "CV out"
 					},
 					{
 						value: "CV In"
 					},
 					{
-						value: "CV out"
+						value: "Digital Im"
 					}
 				],
 				
@@ -81,16 +81,16 @@ export default {
 		};
 	},
 	created:function() {
-		console.log(this.cvConfigData)     
-		var ioType = this.cvConfigData['cv'][this.mindex-1]['name']      
-		console.log("IO TYPE " + ioType)
 
-		if(ioType == 'cv_input'){
-			this.config_mode.placeholder = 0
-		}
+		var initMode = (this.cvConfigData['cv'][this.mindex-1]['mode'])   
+		var initRange =(this.cvConfigData['cv'][this.mindex-1]['range'])     
+  
+		console.log(initMode + " MODE")
 
-		console.log(this.config_mode.options[0].value + " THIS CONFIG MODE")
+		this.config_mode.placeholder = this.config_mode.options[initMode].value
+		this.config_range.placeholder = this.config_range.options[initRange].value
 	},
+
 	methods: {
 		setNewSelectedOption(selectedOption,property) {
 			property.placeholder = selectedOption.value
