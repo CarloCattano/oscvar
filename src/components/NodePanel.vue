@@ -5,6 +5,10 @@
     </IO_node>
     <IO_node mindex="2" >
     </IO_node>
+    <IO_node mindex="3" >
+    </IO_node>
+    <IO_node mindex="4" >
+    </IO_node>
   </div>
 </template>
 <script>
@@ -16,9 +20,15 @@ export default {
   props: {
     msg: String
   },
+  data(){
+    return{
+      
+    }
+  },
   components:{
     IO_node
   },
+ 
 }
 </script>
 

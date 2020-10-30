@@ -1,0 +1,114 @@
+{
+    "system": {
+        "hostname": "",
+        "sample_rate": 96000,
+        "buffer_size": 64,
+        "wifi_ssid": "Vortex",
+        "wifi_pass": "Password"
+    },
+    "osc": {
+        "port": 5000
+    },
+    "cv": [
+        {
+            "name": "Elements Freq CV",
+            "mode": 0,
+            "range": 0
+        },
+        {
+            "name": "Elements Gate",
+            "mode": 0,
+            "range": 0
+        },
+        {
+            "name": "Frequency CV",
+            "mode": 0,
+            "range": 0
+        },
+        {
+            "name": "CV3",
+            "mode": 0,
+            "range": 0
+        },
+        {
+            "name": "CV4",
+            "mode": 0,
+            "range": 0
+        },
+        {
+            "name": "CV5",
+            "mode": 0,
+            "range": 0
+        },
+        {
+            "name": "CV6",
+            "mode": 0,
+            "range": 0
+        },
+        {
+            "name": "CV7",
+            "mode": 0,
+            "range": 0
+        },
+        {
+            "name": "CV8",
+            "mode": 0,
+            "range": 0
+        },
+        {
+            "name": "CV9",
+            "mode": 0,
+            "range": 0
+        },
+        {
+            "name": "CV10",
+            "mode": 0,
+            "range": 0
+        },
+        {
+            "name": "CV11",
+            "mode": 0,
+            "range": 0
+        },
+        {
+            "name": "CV12",
+            "mode": 0,
+            "range": 0
+        },
+        {
+            "name": "CV13",
+            "mode": 0,
+            "range": 0
+        },
+        {
+            "name": "CV14",
+            "mode": 0,
+            "range": 0
+        },
+        {
+            "name": "CV15",
+            "mode": 0,
+            "range": 0
+        },
+        {
+            "name": "CV16",
+            "mode": 0,
+            "range": 0
+        },
+        {
+            "name": "CV17",
+            "mode": 0,
+            "range": 0
+        },
+        {
+            "name": "CV18",
+            "mode": 0,
+            "range": 0
+        },
+        {
+            "name": "CV19",
+            "mode": 0,
+            "range": 0
+        }
+    ]
+}

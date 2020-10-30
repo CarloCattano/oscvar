@@ -9,11 +9,16 @@
 			<vue-dropdown :config="config_range" @setSelectedOption="setNewSelectedOption($event,config_range);">
 			</vue-dropdown>
 		</div>
+			<div class="standbyme">
+			<vue-dropdown :config="config_name" @setSelectedOption="setNewSelectedOption($event,config_range);">
+			</vue-dropdown>
+		</div>
 	</div>
 </template>
 <script>
 
 import vueDropdown from "../../node_modules/vue-dynamic-dropdown/dropdown";
+import cv_config from "../cv_config.json"
 
 export default {
 	name: "io_node",
@@ -23,6 +28,7 @@ export default {
 	props:['mindex'],
 	data: function() {
 		return {
+			cvConfigData : cv_config,
 			config_mode: {
 				options: [
 					{
@@ -63,7 +69,27 @@ export default {
 				border: "1px solid gray",
 				width: 180
 			},	
+			config_name: {
+				options: ["Add yours"],
+				placeholder: cv_config['cv'][this.mindex-1]['name'],
+				backgroundColor: "#cde4f5",
+				textColor: "black",
+				borderRadius: "1.5em",
+				border: "1px solid gray",
+				width: 300
+			}
 		};
+	},
+	created:function() {
+		console.log(this.cvConfigData)     
+		var ioType = this.cvConfigData['cv'][this.mindex-1]['name']      
+		console.log("IO TYPE " + ioType)
+
+		if(ioType == 'cv_input'){
+			this.config_mode.placeholder = 0
+		}
+
+		console.log(this.config_mode.options[0].value + " THIS CONFIG MODE")
 	},
 	methods: {
 		setNewSelectedOption(selectedOption,property) {
@@ -75,8 +101,9 @@ export default {
 			if(property == this.config_mode){
 				console.log("INDEX "+ this.mindex + "Mode : "+ selectedOption.value)
 			}
+	
 		}
-	}
+	},
 };
 
 </script>
