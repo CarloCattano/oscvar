@@ -1,9 +1,9 @@
 <template>
   <div class="nodepanel">
     <h1>{{ msg }}</h1>
-    <IO_node :index="1" >
+    <IO_node mindex="1" >
     </IO_node>
-    <IO_node :index="2" >
+    <IO_node mindex="2" >
     </IO_node>
   </div>
 </template>
